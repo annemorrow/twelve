@@ -210,7 +210,7 @@ function setup() {
   document.getElementById("output").innerHTML = "";
   
   if(score >= 100) {
-    document.getElementById("scorefull").style.height = "282px";
+    document.getElementById("scorefill").style.height = "282px";
   } else {
     document.getElementById("scorefill").style.height = Math.floor(score/100*282) + "px";
   }
