@@ -1,0 +1,31 @@
+#cards {
+  height: 225px;
+}
+
+.card {
+    font-size: 72px;
+    background-color: ivory;
+    float: left;
+    margin: 30px;
+    padding: 21px;
+    padding-top: 34px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border: solid red;
+    border-radius: 16px;
+}
+
+#answer {
+  height: 70px;
+  width: 419px;
+  font-size: 3em;
+  border: 3px solid fuchsia;
+  margin-left: 200px;
+}
+
+#output {
+  height:70px;
+  width:70px;
+  background-color: green;
+}
