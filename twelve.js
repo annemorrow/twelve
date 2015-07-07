@@ -207,6 +207,8 @@ setup();
 function setup() {
   cards = [];
   document.getElementById("answer").value = "";
+  document.getElementById("output").innerHTML = "";
+  document.getElementById("score").innerHTML = score;
   console.log("begin again");
   for (var i = 0; i < 4; i++) {
     cards.push(Math.floor(Math.random() * 10) + 1);
@@ -230,4 +232,10 @@ function processAnswer() {
   } else {
     document.getElementById("output").innerHTML = result;
   }
+}
+
+function giveup() {
+  score--;
+  if (score < 0) score = 0;
+  setup();
 }

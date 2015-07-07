@@ -29,3 +29,7 @@
   width:70px;
   background-color: green;
 }
+
+#score {
+  font-size: 4em;
+}
