@@ -200,12 +200,22 @@ function usesCorrectNumbers(numbersArray, str) {
 // The following are for interacting with the DOM, and might go in a different file
 
 var cards = [];
-for (var i = 0; i < 4; i++) {
-  cards.push(Math.floor(Math.random() * 10) + 1);
-}
-var cardDivs = document.getElementsByClassName("card");
-for (var i = 0; i < 4; i++) {
-  cardDivs[i].innerHTML = cards[i];
+var score = 0;
+
+setup();
+
+function setup() {
+  cards = [];
+  document.getElementById("answer").value = "";
+  console.log("begin again");
+  for (var i = 0; i < 4; i++) {
+    cards.push(Math.floor(Math.random() * 10) + 1);
+  }
+  var cardDivs = document.getElementsByClassName("card");
+  for (var i = 0; i < 4; i++) {
+    console.log(cards[i]);
+    cardDivs[i].innerHTML = cards[i];
+  }
 }
 
 function processAnswer() {
@@ -213,6 +223,10 @@ function processAnswer() {
   var result = evaluateExpression(input);
   if (usesCorrectNumbers(cards, input) && result == 12) {
     document.getElementById("output").innerHTML = "SUCCESS";
+    score++;
+    setTimeout(function(){
+      setup();
+      }, 2000);
   } else {
     document.getElementById("output").innerHTML = result;
   }
