@@ -208,7 +208,12 @@ function setup() {
   cards = [];
   document.getElementById("answer").value = "";
   document.getElementById("output").innerHTML = "";
-  document.getElementById("scorefill").style.height = Math.floor(score/100*282) + "px";
+  
+  if(score >= 100) {
+    document.getElementById("scorefull").style.height = "282px";
+  } else {
+    document.getElementById("scorefill").style.height = Math.floor(score/100*282) + "px";
+  }
   console.log("begin again");
   for (var i = 0; i < 4; i++) {
     cards.push(Math.floor(Math.random() * 10) + 1);
