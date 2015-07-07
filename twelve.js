@@ -114,11 +114,20 @@ function isExpressionSyntacticallyCorrect(str) {
   return true;
 }
 
+
+// need to work on (6-4)*6(1) and generally make this cleaner
 function makeParenthesesMultiplication(str) {
   for (var i = 0; i < str.length - 1; i++) {
-    if (((!isOperator(str[i]) && !str[i] == "(") && str[i+1] == "(") || (str[i] == ")" && (!isOperator(str[i+1]) && !str[i+1] == ")"))) {
-      console.log(i);
-      return makeParenthesesMultiplication(str.substring(0, i + 1) + "*" + str.substring(i + 1, str.length));
+    if (str[i] == ")") {
+      if (!isNaN(str[i+1]) || str[i+1] == "(") {
+        var multInserted = str.substring(0, i+1) + "*" + str.substring(i+1, str.length);
+        return makeParenthesesMultiplication(multInserted);
+      }
+    } else if (str[i+1] == "(") {
+      if (!isNaN(str[i]) || str[i+1] == ")") {
+        var multInserted = str.substring(0, i+1) + "*" + str.substring(i+1, str.length);
+        return makeParenthesesMultiplication(multInserted);
+      }
     }
   }
   return str;
