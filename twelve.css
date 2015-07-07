@@ -1,3 +1,8 @@
+#game {
+  width: 876px;
+  position:relative;
+}
+
 #cards {
   height: 225px;
 }
@@ -6,7 +11,8 @@
     font-size: 72px;
     background-color: ivory;
     float: left;
-    margin: 30px;
+    margin: 20px;
+    margin-left: 30px;
     padding: 21px;
     padding-top: 34px;
     width: 100px;
@@ -18,18 +24,45 @@
 
 #answer {
   height: 70px;
-  width: 419px;
+  width: 394px;
   font-size: 3em;
   border: 3px solid fuchsia;
-  margin-left: 200px;
+  margin-left: 34px;
+  float: left;
 }
 
 #output {
-  height:70px;
-  width:70px;
-  background-color: green;
+  height: 67px;
+  width:200px;
+  background-color: lightgreen;
+  font-size: 2.5em;
+  padding: 5px;
+  text-align: center;
+  /* display: inline-block; */
+  float: left;
 }
 
 #score {
   font-size: 4em;
+  /* float: right; */
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  border: solid;
+  height: 281px;
+  width: 32px;
+}
+
+#scorefill {
+  width: inherit;
+  background-color: red;
+  position: absolute;
+  bottom: 0px;
+}
+
+button {
+  height: 76px;
+  width:85px;
+  font-size: 2em;
+  float: left;
 }

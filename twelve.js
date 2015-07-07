@@ -208,7 +208,7 @@ function setup() {
   cards = [];
   document.getElementById("answer").value = "";
   document.getElementById("output").innerHTML = "";
-  document.getElementById("score").innerHTML = score;
+  document.getElementById("scorefill").style.height = Math.floor(score/100*282) + "px";
   console.log("begin again");
   for (var i = 0; i < 4; i++) {
     cards.push(Math.floor(Math.random() * 10) + 1);
@@ -225,7 +225,7 @@ function processAnswer() {
   var result = evaluateExpression(input);
   if (usesCorrectNumbers(cards, input) && result == 12) {
     document.getElementById("output").innerHTML = "SUCCESS";
-    score++;
+    score += 5;
     setTimeout(function(){
       setup();
       }, 2000);

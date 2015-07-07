@@ -7,6 +7,8 @@
 </head>
 <body>
 
+<div id="game">
+
   <div id="cards">
     <div class="card">3</div>
     <div class="card">8</div>
@@ -14,11 +16,17 @@
     <div class="card">10</div>
   </div>
   
-  <input id="answer" type="text" autofocus oninput="processAnswer()">
+  <div id="actionBar">
+    <input id="answer" type="text" autofocus oninput="processAnswer()">
+    <div id="output"></div>
+    <button onclick="giveup()">SKIP</button>
+  </div>
   
-  <div id="output"></div>
-  <button onclick="giveup()">Give Up</button>
-  <div id="score"></div>
+  <div id="score">
+    <div id="scorefill"></div>
+  </div>
+  
+</div>
 
 <script src="twelve.js"></script>
 </body>
